@@ -1,6 +1,5 @@
-<?php  
+<?php
 function curl($url, $data = null, $headers = null) {
-
 	$ch = curl_init();
 	$options = array(
 		CURLOPT_URL => $url,
@@ -10,7 +9,6 @@ function curl($url, $data = null, $headers = null) {
 		CURLOPT_HEADER => true,
 		CURLOPT_TIMEOUT => 30,
 	);
-
 
 	if ($data != "") {
 		$options[CURLOPT_POST] = true;
@@ -25,7 +23,6 @@ function curl($url, $data = null, $headers = null) {
 	$result = curl_exec($ch);
 	curl_close($ch);
 	return $result;
-
 }
 
 function getcookies($source) {
@@ -37,10 +34,4 @@ function getcookies($source) {
 	}
 	return $cookies;
 }
-
-
-
-
-
-
 ?>
